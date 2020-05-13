@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using OxyPlot;
+using OxyPlot.Series;
 
 namespace mems_fx3lp
 {
@@ -20,14 +22,27 @@ namespace mems_fx3lp
     /// </summary>
     public partial class MainWindow : Window
     {
+        public PlotModel ScatterModel { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-        }
+            DataContext = this;
+            var tmp = new PlotModel { Title = "SToDo Application", Subtitle = "Barnsley fern (IFS)" };
+            var s1 = new LineSeries
+            {
+                StrokeThickness = 0,
+                MarkerSize = 3,
+                MarkerStroke = OxyColors.ForestGreen,
+                MarkerType = MarkerType.Plus
+            };
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
+            foreach (var pt in Fern.Generate(2000))
+            {
+                s1.Points.Add(new DataPoint(pt.X, -pt.Y));
+            }
 
-        }
+            tmp.Series.Add(s1);
+            this.ScatterModel = tmp;
+        }     
     }
 }
