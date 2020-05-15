@@ -11,20 +11,22 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
-        FontFamily="{materialDesign:MaterialDesignFont}"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
         Title="MainWindow" Height="757.082" Width="1152.468">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="44*"/>
-            <ColumnDefinition Width="353*"/>
+            <ColumnDefinition MinWidth="200" />
+            <ColumnDefinition Width="Auto" MinWidth="700"/>
+            <ColumnDefinition Width="Auto" MinWidth="200"/>
         </Grid.ColumnDefinitions>
-        <TabControl HorizontalAlignment="Left" Height="525" Margin="27,44,0,0" VerticalAlignment="Top" Width="986" Grid.ColumnSpan="2">
+        <materialDesign:Card MinWidth="100" Margin="24,30,25.4,26.2"/>
+        <TabControl Grid.Column="1" Margin="9.2,0,36.6,101.2">
             <TabItem Header="App 1" Margin="-1,-2,-2.8,-0.2">
                 <Grid Background="#FFE5E5E5" Margin="0,0,-46.6,-39.4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <oxy:PlotView Model="{Binding ScatterModel}"/>
+                    <oxy:PlotView Model="{Binding ScatterModel}" Margin="0,0,-0.4,0.2"/>
                 </Grid>
             </TabItem>
             <TabItem Header="App 2">
@@ -37,6 +39,6 @@
                 </Grid>
             </TabItem>
         </TabControl>
-
+        <Button Content="Button" Grid.Column="2" Height="81" Margin="7.6,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="109"/>
     </Grid>
 </Window>
