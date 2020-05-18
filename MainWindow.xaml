@@ -34,24 +34,35 @@
             <BeginStoryboard Storyboard="{StaticResource MenuClose}" />
         </EventTrigger>
     </Window.Triggers>
-    <Grid Background="LightGray">
-        <Grid Height="60" VerticalAlignment="Top" Background="#FF41379A">
-            <TextBlock Text="Draft Draft Draft" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
-            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="Test Test" FontSize="18" VerticalAlignment="Center"/>
-                <materialDesign:PopupBox HorizontalAlignment="Right" Margin="5" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
-                    <StackPanel Width="150">
-                        <Button Content="Register Control"/>
-                        <Button Content="Preset"/>
-                        <Button Content="Help"/>
-                        <Separator/>
-                        <Button x:Name="ButtonPopUpLogout" Content="Exit" Click="ButtonPopUpLogout_Click"/>
-                    </StackPanel>
-                </materialDesign:PopupBox>
-            </StackPanel>
-        </Grid>
-        <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF41379A">
-            <StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="118*"/>
+            <ColumnDefinition Width="419*"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:ColorZone Mode="PrimaryDark" Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
+            <!--<Grid Height="60" VerticalAlignment="Top" Background="#FF41379A">-->
+            <Grid Height="60" VerticalAlignment="Top">
+                <TextBlock Text="Draft Draft Draft" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Test Test" FontSize="18" VerticalAlignment="Center"/>
+                    <materialDesign:PopupBox HorizontalAlignment="Right" Margin="5" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                        <StackPanel Width="150">
+                            <Button Content="Register Control"/>
+                            <Button Content="Preset"/>
+                            <Button Content="Help"/>
+                            <Separator/>
+                            <Button x:Name="ButtonPopUpLogout" Content="Exit" Click="ButtonPopUpLogout_Click"/>
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                </StackPanel>
+            </Grid>
+        </materialDesign:ColorZone>
+        <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left"  Margin="0,0,0,0.4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="497*"/>
+                <RowDefinition Height="73*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="0,0,0,0.4" Grid.RowSpan="2">
                 <Grid Height="150" Background="White">
                     <Button x:Name="ButtonCloseMenu" Width="60" Height="60" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="ButtonCloseMenu_Click">
                         <materialDesign:PackIcon Kind="ArrowLeft" Foreground="#FF1B3861" Width="25" Height="25"/>
@@ -60,38 +71,40 @@
                         <materialDesign:PackIcon Kind="Menu" Foreground="#FF1B3861" Width="25" Height="25"/>
                     </Button>
                 </Grid>
-                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF1368BD">
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
-                            <TextBlock Text="Home" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Pencil" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
-                            <TextBlock Text="Create" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Ticket" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
-                            <TextBlock Text="Ticket" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Message" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
-                            <TextBlock Text="Messages" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Github" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
-                            <TextBlock Text="Github" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                </ListView>
+                <materialDesign:ColorZone Mode="Light" Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
+                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                                <TextBlock Text="Home" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Pencil" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                                <TextBlock Text="Create" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Ticket" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                                <TextBlock Text="Ticket" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Message" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                                <TextBlock Text="Messages" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Github" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                                <TextBlock Text="Github" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                </materialDesign:ColorZone>
             </StackPanel>
         </Grid>
     </Grid>
