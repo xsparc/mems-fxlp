@@ -11,18 +11,18 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
-        Title="MainWindow" Height="600" Width="1080" Foreground="White">
+        Title="MainWindow" Height="720" Width="1280" Foreground="White">
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="MenuClose">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
@@ -36,8 +36,8 @@
     </Window.Triggers>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="118*"/>
-            <ColumnDefinition Width="419*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="420*"/>
         </Grid.ColumnDefinitions>
         <materialDesign:ColorZone Mode="PrimaryDark" Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
             <!--<Grid Height="60" VerticalAlignment="Top" Background="#FF41379A">-->
@@ -106,6 +106,13 @@
                     </ListView>
                 </materialDesign:ColorZone>
             </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="629*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1"/>
         </Grid>
     </Grid>
 </Window>
