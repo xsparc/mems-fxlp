@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using OxyPlot;
+using OxyPlot.Series;
 
 namespace mems_fx3lp
 {
@@ -24,8 +26,6 @@ namespace mems_fx3lp
         public MainWindow()
         {
             InitializeComponent();
-
-            var listView = this.ListViewSelection.Items;
         }
 
         
@@ -62,11 +62,16 @@ namespace mems_fx3lp
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
         }
 
-        private void ListViewItem_Selected(object sender, RoutedEventArgs e)
+        private void ListViewItemPlot_Selected(object sender, RoutedEventArgs e)
         {
             Debug.Print("yeey");
             var item = new UserControlPlot();
             SwitchScreen(item);
+        }
+
+        private void ListViewItemOverview_Selected(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

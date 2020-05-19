@@ -42,9 +42,9 @@
         <materialDesign:ColorZone Mode="PrimaryDark" Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
             <!--<Grid Height="60" VerticalAlignment="Top" Background="#FF41379A">-->
             <Grid Height="60" VerticalAlignment="Top">
-                <TextBlock Text="Draft Draft Draft" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
+                <TextBlock Text="ADXL355" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBlock Text="Test Test" FontSize="18" VerticalAlignment="Center"/>
+                    <TextBlock Text="Settings" FontSize="18" VerticalAlignment="Center"/>
                     <materialDesign:PopupBox HorizontalAlignment="Right" Margin="5" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
                         <StackPanel Width="150">
                             <Button Content="Register Control"/>
@@ -73,16 +73,16 @@
                 </Grid>
                 <materialDesign:ColorZone Mode="Light" Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
                     <ListView x:Name="ListViewSelection" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
-                        <ListViewItem Height="60" Selected="ListViewItem_Selected">
+                        <ListViewItem x:Name="ListViewItemOverview" Height="60" Selected="ListViewItemOverview_Selected">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
-                                <TextBlock Text="Home" VerticalAlignment="Center" Margin="20 10"/>
+                                <TextBlock Text="Overview" VerticalAlignment="Center" Margin="20 10"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem Height="60">
+                        <ListViewItem x:Name="ListViewItemPlot" Height="60" Selected="ListViewItemPlot_Selected">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Pencil" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
-                                <TextBlock Text="Create" VerticalAlignment="Center" Margin="20 10"/>
+                                <TextBlock Text="Plot" VerticalAlignment="Center" Margin="20 10"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="60">
@@ -112,7 +112,7 @@
                 <RowDefinition Height="60*"/>
                 <RowDefinition Height="629*"/>
             </Grid.RowDefinitions>
-            <StackPanel x:Name="StackPanelPlot" Grid.Row="1" Background="Red" Margin="10"/>
+            <StackPanel x:Name="StackPanelPlot" Grid.Row="1" Margin="10" MinWidth="1007" MinHeight="609"/>
         </Grid>
     </Grid>
 </Window>
