@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,20 @@ namespace mems_fx3lp
         public MainWindow()
         {
             InitializeComponent();
+
+            var listView = this.ListViewSelection.Items;
+        }
+
+        
+
+        internal void SwitchScreen(object sender)
+        {
+            var screen = ((UserControl)sender);
+            if(screen!=null)
+            {
+                StackPanelPlot.Children.Clear();
+                StackPanelPlot.Children.Add(screen);
+            }
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -45,6 +60,13 @@ namespace mems_fx3lp
         {
             ButtonOpenMenu.Visibility = Visibility.Visible;
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
+        }
+
+        private void ListViewItem_Selected(object sender, RoutedEventArgs e)
+        {
+            Debug.Print("yeey");
+            var item = new UserControlPlot();
+            SwitchScreen(item);
         }
     }
 }

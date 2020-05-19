@@ -72,8 +72,8 @@
                     </Button>
                 </Grid>
                 <materialDesign:ColorZone Mode="Light" Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
-                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
-                        <ListViewItem Height="60">
+                    <ListView x:Name="ListViewSelection" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                        <ListViewItem Height="60" Selected="ListViewItem_Selected">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
                                 <TextBlock Text="Home" VerticalAlignment="Center" Margin="20 10"/>
@@ -112,7 +112,7 @@
                 <RowDefinition Height="60*"/>
                 <RowDefinition Height="629*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="1"/>
+            <StackPanel x:Name="StackPanelPlot" Grid.Row="1" Background="Red" Margin="10"/>
         </Grid>
     </Grid>
 </Window>
