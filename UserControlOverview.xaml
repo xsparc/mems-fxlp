@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="mems_fx3lp.UserControlOverview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:mems_fx3lp"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="600" MinWidth="800" MinHeight="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" VerticalAlignment="Stretch" Margin="10,50,10,10">
+            <materialDesign:Card Margin="5,10,10,10" Height ="600" Foreground="Black" VerticalAlignment="Stretch" >
+                <StackPanel>
+                    <Image Source="{StaticResource BlockDiagramImageSource}" />
+                    <Image Source="{StaticResource DescriptionImageSource}" Margin="0,50,0,0"/>
+                </StackPanel>
+            </materialDesign:Card>
+        </StackPanel>
+        <StackPanel Grid.Column="1" VerticalAlignment="Stretch">
+            <Image Source="{StaticResource InertialNavigationSystemImageSource}" Margin="15,15,15,15" Width="400" Height="200"/>
+            <Image Source="{StaticResource TiltSensingImageSource}" Margin="15,15,15,15" Width="400" Height="200"/>
+            <Image Source="{StaticResource AccelerometerImageSource}" Margin="15,15,15,15" Width="400" Height="200"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:mems_fx3lp.Resources">
+
+    <BitmapImage x:Key="BlockDiagramImageSource" UriSource="block_diagram.PNG"/>
+    <BitmapImage x:Key="AccelerometerImageSource" UriSource="accelerometer.PNG"/>
+    <BitmapImage x:Key="DescriptionImageSource" UriSource="description.PNG"/>
+    <BitmapImage x:Key="InertialNavigationSystemImageSource" UriSource="inertial_navigation_system.PNG"/>
+    <BitmapImage x:Key="TiltSensingImageSource" UriSource="tilt_sensing.PNG"/>
+</ResourceDictionary>
